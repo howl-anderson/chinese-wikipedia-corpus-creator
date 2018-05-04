@@ -9,6 +9,10 @@ def batch_executor(input_dir, output_dir, executor_object, n_jobs=-2):
     input_path = Path(input_dir)
     input_file_list = input_path.glob("**/*")
 
+    # filter out hidden files (e.g. .gitignore)
+    input_file_list = filter(lambda x: not x.parts[-1].startswith('.'),
+                             input_file_list)
+
     output_path = Path(output_dir)
 
     executor_input_list = []
