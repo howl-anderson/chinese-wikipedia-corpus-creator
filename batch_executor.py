@@ -3,6 +3,7 @@ import logging
 from pathlib import Path
 
 import joblib
+from tqdm import tqdm
 
 
 def batch_executor(input_dir, output_dir, executor_object, n_jobs=-1):
@@ -25,4 +26,4 @@ def batch_executor(input_dir, output_dir, executor_object, n_jobs=-1):
             (input_file_path.absolute(), output_file_path.absolute())
         )
 
-    joblib.Parallel(n_jobs=n_jobs)(joblib.delayed(executor_object)(*i) for i in executor_input_list)
+    joblib.Parallel(n_jobs=n_jobs)(joblib.delayed(executor_object)(*i) for i in tqdm(executor_input_list))
