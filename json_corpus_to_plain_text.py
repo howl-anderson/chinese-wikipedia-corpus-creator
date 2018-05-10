@@ -40,4 +40,4 @@ def process_file(input_file):
                 output_fd.write(plain_data)
 
 
-Parallel(n_jobs=-2)(delayed(process_file)(input_file) for input_file in tqdm(input_files))
+Parallel(n_jobs=-1)(delayed(process_file)(input_file) for input_file in tqdm(input_files))

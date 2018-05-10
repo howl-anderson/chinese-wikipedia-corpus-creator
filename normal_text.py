@@ -33,4 +33,4 @@ def process_file(input_file_path):
     
     subprocess.call(cmd_string, shell=True)
         
-joblib.Parallel(n_jobs=-2)(joblib.delayed(process_file)(input_file) for input_file in tqdm(input_files))
+joblib.Parallel(n_jobs=-1)(joblib.delayed(process_file)(input_file) for input_file in tqdm(input_files))
