@@ -11,7 +11,7 @@
 
 ### 系统要求&软件依赖
 
-支持 python3, python2 未经过良好测试。
+支持 python 3.4+, 不支持 python2
 
 #### python 软件包
 

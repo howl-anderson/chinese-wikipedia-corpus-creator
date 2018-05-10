@@ -11,7 +11,7 @@ Clone or download this repo to local filesystem.
 
 ### Prerequisites
 
-Python3 is well supported, while python2 is not tested yet.
+Python 3.4+ is well supported, python2 is not supported.
 
 #### python packages
 install requirements by:
