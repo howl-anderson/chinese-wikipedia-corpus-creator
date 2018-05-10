@@ -22,9 +22,13 @@ pip install -r ./requirements.txt
 
 #### non-python packages
 
-[OpenCCC](https://github.com/BYVoid/OpenCC) is required. User should install it by themself.
+[OpenCCC](https://github.com/BYVoid/OpenCC) is required. User should install it by self.
 
+For Uubntu / debian user, `opencc` can be installed by command `apt`：
 
+```bash
+sudo apt-get install opencc
+```
 
 ### Usage
 

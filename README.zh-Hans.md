@@ -25,6 +25,12 @@ pip install -r ./requirements.txt
 
 需要安装 [OpenCCC](https://github.com/BYVoid/OpenCC)，用户按照官方的指示，安装即可。
 
+Uubntu / debian 用户，使用 `apt` 命令即可：
+
+```bash
+sudo apt-get install opencc
+```
+
 
 
 ### 使用
