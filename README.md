@@ -13,14 +13,20 @@ Clone or download this repo to local filesystem.
 
 Python 3.4+ is well supported, python2 is not supported.
 
-#### python packages
+#### For ubuntu/debian user
+
+Script `install_dependencies_on_ubunut.bash` will install everything for you.
+
+#### For other operation system user
+
+##### python packages
 install requirements by:
 
 ```bash
 pip install -r ./requirements.txt
 ```
 
-#### non-python packages
+##### non-python packages
 
 [OpenCCC](https://github.com/BYVoid/OpenCC) is required. User should install it by self.
 
@@ -31,5 +37,10 @@ sudo apt-get install opencc
 ```
 
 ### Usage
+#### All in one script
+
+`allinone_process.bash`
+
+#### Manual running
 
 see [workflow](workflow.md)
