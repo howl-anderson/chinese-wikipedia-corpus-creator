@@ -3,3 +3,4 @@ joblib
 tqdm
 plac
 gensim
+jieba
