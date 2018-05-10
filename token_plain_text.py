@@ -18,6 +18,9 @@ input_dir = sys.argv[1]
 input_path = pathlib.Path(input_dir)
 input_files = input_path.glob("**/*")
 
+# filter out hidden files (e.g. .gitignore)
+input_files = filter(lambda x: not x.parts[-1].startswith('.'), input_files)
+
 output_dir = sys.argv[2]
 output_path = pathlib.Path(output_dir)
 

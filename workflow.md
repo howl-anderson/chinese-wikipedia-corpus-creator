@@ -2,7 +2,7 @@
 
 ## Downloading raw data
    * input：-
-   * output：`raw_data/*wiki-latest-pages-articles.xml.bz2`
+   * output：`raw_data/zhwiki-latest-pages-articles.xml.bz2`
    * script：`download_wikipedia_raw_corpus.bash`
 
 ## Extracting content
