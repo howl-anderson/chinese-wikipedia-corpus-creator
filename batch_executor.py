@@ -23,7 +23,7 @@ def batch_executor(input_dir, output_dir, executor_object, n_jobs=-1):
         output_file_path = output_path / input_file_relative_name
 
         executor_input_list.append(
-            (input_file_path.absolute(), output_file_path.absolute())
+            (str(input_file_path.absolute()), str(output_file_path.absolute()))
         )
 
     joblib.Parallel(n_jobs=n_jobs)(joblib.delayed(executor_object)(*i) for i in tqdm(executor_input_list))
