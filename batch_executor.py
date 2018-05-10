@@ -5,7 +5,7 @@ from pathlib import Path
 import joblib
 
 
-def batch_executor(input_dir, output_dir, executor_object, n_jobs=-2):
+def batch_executor(input_dir, output_dir, executor_object, n_jobs=-1):
     input_path = Path(input_dir)
     input_file_list = input_path.glob("**/*")
 
