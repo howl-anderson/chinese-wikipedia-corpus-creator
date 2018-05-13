@@ -7,13 +7,13 @@
 
 ## 开始使用
 
-克隆或者下载本repo志本地文件系统
+克隆或者下载本 repo 至本地文件系统
 
 ### 系统要求&软件依赖
 
 支持 python 3.4+, 不支持 python2
 
-#### Ubuntu/debian 用户
+#### Ubuntu/Debian 用户
 
 脚本 `install_dependencies_on_ubunut.bash` 会帮你自动安装好所有的依赖
 
@@ -30,7 +30,7 @@ pip install -r ./requirements.txt
 
 需要安装 [OpenCCC](https://github.com/BYVoid/OpenCC)，用户按照官方的指示，安装即可。
 
-Uubntu / debian 用户，使用 `apt` 命令即可：
+Ubuntu / Debian 用户，使用 `apt` 命令即可：
 
 ```bash
 sudo apt-get install opencc
