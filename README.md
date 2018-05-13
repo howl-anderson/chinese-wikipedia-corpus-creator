@@ -1,46 +1,49 @@
-[中文版本的 README](README.zh-Hans.md)
+[README written in English](README.en-US.md)
 ------------------------------
 
-# Chinese Wikipedia corpus creater
+# 中文 Wikipedia 维基百科语料库构建工具
 
-Workflow and scripts that help user create Chinese Wikepedia corpus easily form scratch.
+本项目提供了工作流和脚本工具，从零开始创建中文维基百科语料库。
 
-## Getting Started
+## 开始使用
 
-Clone or download this repo to local filesystem.
+克隆或者下载本repo志本地文件系统
 
-### Prerequisites
+### 系统要求&软件依赖
 
-Python 3.4+ is well supported, python2 is not supported.
+支持 python 3.4+, 不支持 python2
 
-#### For ubuntu/debian user
+#### Ubuntu/debian 用户
 
-Script `install_dependencies_on_ubunut.bash` will install everything for you.
+脚本 `install_dependencies_on_ubunut.bash` 会帮你自动安装好所有的依赖
 
-#### For other operation system user
+#### 其他操作系统用户
+##### python 软件包
 
-##### python packages
-install requirements by:
+使用如下命令安装所需的 python 依赖：
 
 ```bash
 pip install -r ./requirements.txt
 ```
 
-##### non-python packages
+##### 非 python 软件包
 
-[OpenCCC](https://github.com/BYVoid/OpenCC) is required. User should install it by self.
+需要安装 [OpenCCC](https://github.com/BYVoid/OpenCC)，用户按照官方的指示，安装即可。
 
-For Uubntu / debian user, `opencc` can be installed by command `apt`：
+Uubntu / debian 用户，使用 `apt` 命令即可：
 
 ```bash
 sudo apt-get install opencc
 ```
 
-### Usage
-#### All in one script
+
+
+### 使用
+
+#### 全自动脚本
 
 `allinone_process.bash`
 
-#### Manual running
+#### 手动运行
 
-see [workflow](workflow.md)
+见 [workflow](workflow.zh-Hans.md)
