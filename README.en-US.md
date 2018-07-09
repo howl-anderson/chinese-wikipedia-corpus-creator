@@ -44,3 +44,7 @@ sudo apt-get install opencc
 #### Manual running
 
 see [workflow](workflow.md)
+
+## TODO
+
+Jieba has a poor model performance, replace it with [LTP](https://github.com/HIT-SCIR/ltp) or [THULAC](https://github.com/thunlp/THULAC), prefer using `THULAC` for it's an open source software.

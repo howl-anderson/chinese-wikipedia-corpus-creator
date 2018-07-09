@@ -47,3 +47,7 @@ sudo apt-get install opencc
 #### 手动运行
 
 见 [workflow](workflow.zh-Hans.md)
+
+## TODO
+
+Jieba 分词模型性能不佳,考虑替换成 [LTP](https://github.com/HIT-SCIR/ltp) 或者 [THULAC](https://github.com/thunlp/THULAC), 优先考虑使用 `THULAC`, 因为它是开源软件
