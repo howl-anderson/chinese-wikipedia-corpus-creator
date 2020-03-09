@@ -147,3 +147,6 @@ flycheck_*.el
 
 # directory configuration
 .dir-locals.el
+
+WikiExtractor.py
+raw_data/

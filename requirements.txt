@@ -1,4 +1,3 @@
-git+https://github.com/attardi/wikiextractor.git
 joblib
 tqdm
 plac
