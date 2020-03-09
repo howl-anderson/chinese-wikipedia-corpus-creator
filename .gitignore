@@ -150,3 +150,11 @@ flycheck_*.el
 
 WikiExtractor.py
 raw_data/
+normaled_plain_files/*
+!normaled_plain_files/.gitkeep
+spacy_standard_plain_files/*
+!spacy_standard_plain_files/.gitkeep
+token_cleaned_plain_files/*
+!token_cleaned_plain_files/.gitkeep
+sentence_data/*
+!sentence_data/.gitkeep
