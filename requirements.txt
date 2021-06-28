@@ -1,5 +1,7 @@
+wikiextractor
 joblib
 tqdm
 plac
 gensim
 jieba
+beautfulsoup4
