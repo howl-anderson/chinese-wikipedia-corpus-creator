@@ -1,43 +1,28 @@
 #!/bin/env python
-# -*- coding: utf-8 -*-
-
-from __future__ import division
-from __future__ import unicode_literals
-from __future__ import print_function
-from __future__ import absolute_import
-
 
 import sys
 import pathlib
+from unittest import mock
+from typing import Union
 
-import jieba
-import joblib
-from tqdm import tqdm
+import thulac
 
-input_dir = sys.argv[1]
-input_path = pathlib.Path(input_dir)
-input_files = input_path.glob("**/*")
+import batch_executor_v2
 
-# filter out hidden files (e.g. .gitignore)
-input_files = filter(lambda x: not x.parts[-1].startswith('.'), input_files)
-
-output_dir = sys.argv[2]
-output_path = pathlib.Path(output_dir)
+with mock.patch("builtins.print") as _:  # disable print for now
+    thu_tokenizer = thulac.thulac(seg_only=True)
 
 
-def process_file(input_file_path):
-    input_file = str(input_file_path.absolute())
-    output_file_path = output_path / input_file_path.parts[-1]
-    output_file = str(output_file_path.absolute())
-    with open(input_file, 'rt') as in_fd, open(output_file, 'wt') as out_fd:
-        output_lines = []
-        for line in in_fd:
-            seg_list = jieba.cut(line, cut_all=False)
-            output_line = " ".join(filter(lambda x: x != " ", seg_list))   # 精确模式
+def process_file(args: Union[pathlib.Path, pathlib.Path]):
+    input_file, output_file = args
 
-            output_lines.append(output_line)
+    # with THULAC
+    with mock.patch("builtins.print") as _:  # disable print for now
+        thu_tokenizer.cut_f(str(input_file.absolute()), str(output_file.absolute()))
 
-        out_fd.writelines(output_lines)
 
-        
-joblib.Parallel(n_jobs=-1)(joblib.delayed(process_file)(input_file) for input_file in tqdm(input_files))
+if __name__ == "__main__":
+    input_path = pathlib.Path(sys.argv[1])
+    output_path = pathlib.Path(sys.argv[2])
+
+    batch_executor_v2.batch_executor_v2(input_path, output_path, process_file)

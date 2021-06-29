@@ -1,42 +1,25 @@
 #!/bin/env python
-# -*- coding: utf-8 -*-
-
-from __future__ import division
-from __future__ import unicode_literals
-from __future__ import print_function
-from __future__ import absolute_import
-
 
 import sys
 import pathlib
-import subprocess
 
-import joblib
-from tqdm import tqdm
+import opencc
+import batch_executor_v2
 
-input_dir = sys.argv[1]
-input_path = pathlib.Path(input_dir)
-input_files = input_path.glob("**/*")
-
-# filter out hidden files (e.g. .gitignore)
-input_files = filter(lambda x: not x.parts[-1].startswith("."), input_files)
-
-output_dir = sys.argv[2]
-output_path = pathlib.Path(output_dir)
+converter = opencc.OpenCC("t2s.json")
 
 
-def process_file(input_file_path):
-    input_file = str(input_file_path.absolute())
-    output_file_path = output_path / input_file_path.parts[-1]
-    output_file = str(output_file_path.absolute())
+def process_file(args):
+    input_file, output_file = args
 
-    cmd = ["opencc", "-i", input_file, "-o", output_file, "-c", "t2s.json"]
-
-    cmd_string = " ".join(cmd)
-
-    subprocess.call(cmd_string, shell=True)
+    with input_file.open("r") as input_fd, output_file.open("wt") as output_fd:
+        content = input_fd.read()
+        converted_content = converter.convert(content)
+        output_fd.write(converted_content)
 
 
-joblib.Parallel(n_jobs=-1)(
-    joblib.delayed(process_file)(input_file) for input_file in tqdm(input_files)
-)
+if __name__ == "__main__":
+    input_dir = pathlib.Path(sys.argv[1])
+    output_dir = pathlib.Path(sys.argv[2])
+
+    batch_executor_v2.batch_executor_v2(input_dir, output_dir, process_file)

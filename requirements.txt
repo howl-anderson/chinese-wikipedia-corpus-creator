@@ -1,7 +1,9 @@
 wikiextractor
 joblib
+thulac
 tqdm
 plac
 gensim
+opencc
 jieba
 beautfulsoup4
