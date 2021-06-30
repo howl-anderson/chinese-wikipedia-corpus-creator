@@ -8,34 +8,15 @@
 ## 开始使用
 
 克隆或者下载本 repo 至本地文件系统
-
 ### 系统要求&软件依赖
 
-支持 python 3.4+, 不支持 python2
-
-#### Ubuntu/Debian 用户
-
-脚本 `install_dependencies_on_ubunut.bash` 会帮你自动安装好所有的依赖
-
-#### 其他操作系统用户
-##### python 软件包
+支持 python >= 3.6
 
 使用如下命令安装所需的 python 依赖：
 
 ```bash
 pip install -r ./requirements.txt
 ```
-
-##### 非 python 软件包
-
-需要安装 [OpenCCC](https://github.com/BYVoid/OpenCC)，用户按照官方的指示，安装即可。
-
-Ubuntu / Debian 用户，使用 `apt` 命令即可：
-
-```bash
-sudo apt-get install opencc
-```
-
 
 
 ### 使用
@@ -48,6 +29,6 @@ sudo apt-get install opencc
 
 见 [workflow](workflow.zh-Hans.md)
 
-## TODO
+## NOTE
 
-Jieba 分词模型性能不佳,考虑替换成 [LTP](https://github.com/HIT-SCIR/ltp) 或者 [THULAC](https://github.com/thunlp/THULAC), 优先考虑使用 `THULAC`, 因为它是开源软件
+分词部分使用的是 [THULAC](https://github.com/thunlp/THULAC), 它是开源软件, 高性能以及速度快.

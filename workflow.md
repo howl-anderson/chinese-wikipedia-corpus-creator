@@ -25,7 +25,7 @@
    * output：`sentence_data/*`
    * script：`split_text_to_sentence.bash`
 
-## Tokenizer
+## Tokenization
    * input：`sentence_data/*`
    * output：`token_cleaned_plain_files/*`
    * script：`token_plain_text.bash`
