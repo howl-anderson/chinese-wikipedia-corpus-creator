@@ -6,4 +6,4 @@ plac
 gensim
 opencc
 jieba
-beautfulsoup4
+beautifulsoup4
